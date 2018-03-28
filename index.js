@@ -15,7 +15,15 @@ function increaseRankBy(n) {
 }
 
 function deepestChild() {
-  
+  const childs = document.getElementById('grand-node').querySelectorAll();
+  let next = [];
+  for(var i=0; i<childs.length; i++) {
+    if (childs[i].children !== undefined) {
+      next.push(childs[i].children);
+    }
+    childs = childs.shift();
+  }
 }
 
 //other questions: what is the difference between const = and var = and let =
+

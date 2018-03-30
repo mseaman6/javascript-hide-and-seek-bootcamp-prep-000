@@ -21,16 +21,5 @@ function deepestChild() {
   } else {
     return parentNode;
   }
-    
-  //   } else {
-  //     for(var i=0; i<childs.length; i++) {
-  //       if (childs[i].children !== undefined) {
-  //         smallerKids.push(childs[i].children);
-  //       }  
-  //     }
-  //     childs = smallerKids;
-  //   }
-  // }
 }
-
 

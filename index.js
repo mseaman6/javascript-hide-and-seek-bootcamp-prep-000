@@ -14,17 +14,14 @@ function increaseRankBy(n) {
 }
 
 function deepestChild() {
-  let childs = document.getElementById('grand-node').querySelectorAll('div');
-  let smallerKids = [];
-  debugger;
-  // while(childs !== undefined) {
-  //   if(childs.length === 1) {
-  //     var onlyChild = childs.children;
-  //     if(onlyChild !== undefined) {
-  //       childs = onlyChild;
-  //     } else {
-  //       return childs;
-  //     }
+  let childs = document.getElementById('grand-node').querySelector('div');
+  var onlyChild = childs.children;
+    
+    if(onlyChild !== undefined) {
+      childs = onlyChild;
+    } else {
+      return childs;
+    }
   //   } else {
   //     for(var i=0; i<childs.length; i++) {
   //       if (childs[i].children !== undefined) {

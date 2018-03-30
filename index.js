@@ -3,8 +3,7 @@ function getFirstSelector(selector) {
 }
 
 function nestedTarget() {
-  return document.querySelector('#nested.target');
-  //what does "pull out of" mean
+  return document.querySelector('#nested').querySelector('.target');
 }
 
 function increaseRankBy(n) {
@@ -15,15 +14,24 @@ function increaseRankBy(n) {
 }
 
 function deepestChild() {
-  const childs = document.getElementById('grand-node').querySelectorAll();
-  let next = [];
-  for(var i=0; i<childs.length; i++) {
-    if (childs[i].children !== undefined) {
-      next.push(childs[i].children);
+  let childs = document.getElementById('grand-node').querySelectorAll('div');
+  let smallerKids = [];
+  while(childs !== undefined) {
+    if(childs.length === 1) {
+      var onlyChild = childs.children;
+      if(onlyChild !== undefined) {
+        childs = onlyChild;
+      } else {
+        return childs;
+      }
+    } else {
+      for(var i=0; i<childs.length; i++) {
+        if (childs[i].children !== undefined) {
+          smallerKids.push(childs[i].children);
+        }  
+      }
+      childs = smallerKids;
     }
-    childs = childs.shift();
   }
 }
-
-//other questions: what is the difference between const = and var = and let =
 

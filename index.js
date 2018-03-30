@@ -18,6 +18,7 @@ function deepestChild() {
   var childNode = parentNode.children[0];
   if(childNode !== null) {
     parentNode = childNode;
+    childNode = parentNode.children[0];
   } else {
     return parentNode;
   }
